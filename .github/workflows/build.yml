@@ -48,3 +48,10 @@ jobs:
         run: "./gradlew --no-daemon assemble"
       - name: "Execute Gradle check"
         run: "./gradlew --no-daemon check"
+        
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GmsCore
+          path: build/outputs/apk/*/*.apk
+          retention-days: 7  #
