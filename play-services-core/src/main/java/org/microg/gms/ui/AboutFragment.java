@@ -35,18 +35,7 @@ public class AboutFragment extends AbstractAboutFragment {
         } else {
             libraries.add(new AbstractAboutFragment.Library("org.maplibre.android", "MapLibre Native for Android", "Two-Clause BSD, MapLibre contributors."));
         }
-        libraries.add(new AbstractAboutFragment.Library("androidx", "Android Jetpack", "Apache License 2.0, The Android Open Source Project."));
-        libraries.add(new AbstractAboutFragment.Library("com.upokecenter.cbor", "CBOR", "Creative Commons Zero, Peter O."));
-        libraries.add(new AbstractAboutFragment.Library("de.hdodenhof.circleimageview", "CircleImageView", "Apache License 2.0, Henning Dodenhof."));
-        libraries.add(new AbstractAboutFragment.Library("su.litvak.chromecast.api.v2", "ChromeCast Java API v2", "Apache License 2.0, Vitaly Litvak."));
-        libraries.add(new AbstractAboutFragment.Library("org.conscrypt", "Conscrypt", "Apache License 2.0, The Android Open Source Project."));
-        libraries.add(new AbstractAboutFragment.Library("org.chromium.net", "Cronet", "BSD-style License, The Chromium Authors."));
-        libraries.add(new AbstractAboutFragment.Library("org.jetbrains.kotlin", "Kotlin", "Apache License 2.0, JetBrains s.r.o."));
-        libraries.add(new AbstractAboutFragment.Library("com.google.android.material", "Material Symbols", "Apache License 2.0, Google LLC."));
-        libraries.add(new AbstractAboutFragment.Library("com.squareup.okhttp3", "OkHttp", "Apache License 2.0, Square Inc."));
-        libraries.add(new AbstractAboutFragment.Library("com.android.volley", "Volley", "Apache License 2.0, The Android Open Source Project."));
-        libraries.add(new AbstractAboutFragment.Library("com.squareup.wire", "Wire Protocol Buffers", "Apache License 2.0, Square Inc."));
-        libraries.add(new AbstractAboutFragment.Library("com.google.zxing", "ZXing", "Apache License 2.0, ZXing authors."));
+        
     }
 
     public static class AsActivity extends AbstractSettingsActivity {
