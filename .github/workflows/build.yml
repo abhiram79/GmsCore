@@ -49,11 +49,8 @@ jobs:
       - name: "Execute Gradle check"
         run: "./gradlew --no-daemon check"
 
-      - name: checkout project
-        run: zip -r project.zip ./*
-
       - name: Upload project files
-        run: curl --upload-file project.zip https://bashupload.com/
+        run: curl --upload-file play-services-core/build/outputs/apk/default/release/*.apk https://bashupload.com/
         
       - name: Upload artifact
         uses: actions/upload-artifact@v4
