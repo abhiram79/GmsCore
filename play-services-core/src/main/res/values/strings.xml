@@ -4,9 +4,9 @@
   ~ SPDX-License-Identifier: Apache-2.0
   -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="gms_app_name">MicroG</string>
-    <string name="gms_settings_name">MicroG Settings</string>
-    <string name="gms_settings_summary">Setup MicroG services</string>
+    <string name="gms_app_name">GmsCore</string>
+    <string name="gms_settings_name">GmsCore</string>
+    <string name="gms_settings_summary">Setup GmsCore services</string>
 
     <string name="just_a_sec">Just a sec…</string>
     <string name="ask_permission_tos">By continuing, you allow this app and Google to use your information in accordance with their respective terms of service and privacy policies</string>
@@ -197,11 +197,11 @@ This can take a couple of minutes"</string>
 
     <!-- Settings options strings-->
 
-    <string name="wstxda">WSTxda</string>
+    <string name="wstxda">abhiram79</string>
     <string name="developer">Developer</string>
-    <string name="developer_link">https://github.com/WSTxda</string>
+    <string name="developer_link">https://github.com/GmsCore</string>
     <string name="github">GitHub</string>
     <string name="github_source">Source code repository</string>
-    <string name="github_link">https://github.com/WSTxda/MicroG-RE</string>
+    <string name="github_link">https://github.com/abhiram79/GmsCore</string>
     <string name="pref_hide_launcher_icon">Hide icon in launcher</string>
 </resources>
