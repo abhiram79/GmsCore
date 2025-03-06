@@ -61,36 +61,15 @@ class SettingsFragment : ResourceSettingsFragment() {
             findNavController().navigate(requireContext(), R.id.openGcmSettings)
             true
         }
-        findPreference<Preference>(PREF_PRIVACY)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            findNavController().navigate(requireContext(), R.id.privacyFragment)
-            true
-        }
-        findPreference<Preference>(PREF_ABOUT)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            findNavController().navigate(requireContext(), R.id.openAbout)
-            true
-        }
-        findPreference<SwitchPreferenceCompat>(PREF_HIDE_LAUNCHER_ICON)?.apply {
-            setOnPreferenceChangeListener { _, newValue ->
-                val isEnabled = newValue as Boolean
-                iconActivityVisibility(MainSettingsActivity::class.java, !isEnabled)
-                true
-            }
-        }
-        findPreference<Preference>(PREF_DEVELOPER)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            openLink(getString(R.string.developer_link))
-            true
-        }
+        
+        
+        
         findPreference<Preference>(PREF_GITHUB)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             openLink(getString(R.string.github_link))
             true
         }
 
-        findPreference<Preference>(PREF_ABOUT)!!.summary =
-            getString(org.microg.tools.ui.R.string.about_version_str, AboutFragment.getSelfVersion(context))
-
-        for (entry in getAllSettingsProviders(requireContext()).flatMap { it.getEntriesStatic(requireContext()) }) {
-            entry.createPreference()
-        }
+        
 
         findPreference<Preference>(PREF_IGNORE_BATTERY_OPTIMIZATION)?.isVisible =
             !isBatteryOptimizationPermissionGranted()
