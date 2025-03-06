@@ -35,13 +35,12 @@ class SettingsFragment : ResourceSettingsFragment() {
     private val createdPreferences = mutableListOf<Preference>()
 
     companion object {
-        const val PREF_ABOUT = "pref_about"
+        
         const val PREF_GCM = "pref_gcm"
-        const val PREF_PRIVACY = "pref_privacy"
+        
         const val PREF_CHECKIN = "pref_checkin"
         const val PREF_ACCOUNTS = "pref_accounts"
-        const val PREF_HIDE_LAUNCHER_ICON = "pref_hide_launcher_icon"
-        const val PREF_DEVELOPER = "pref_developer"
+
         const val PREF_GITHUB = "pref_github"
         const val PREF_IGNORE_BATTERY_OPTIMIZATION = "pref_ignore_battery_optimization"
     }
