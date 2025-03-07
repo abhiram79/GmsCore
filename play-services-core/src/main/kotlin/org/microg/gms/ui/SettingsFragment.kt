@@ -35,12 +35,13 @@ class SettingsFragment : ResourceSettingsFragment() {
     private val createdPreferences = mutableListOf<Preference>()
 
     companion object {
-        
+        const val PREF_ABOUT = "pref_about"
         const val PREF_GCM = "pref_gcm"
-        
+        const val PREF_PRIVACY = "pref_privacy"
         const val PREF_CHECKIN = "pref_checkin"
         const val PREF_ACCOUNTS = "pref_accounts"
-
+        const val PREF_HIDE_LAUNCHER_ICON = "pref_hide_launcher_icon"
+        const val PREF_DEVELOPER = "pref_developer"
         const val PREF_GITHUB = "pref_github"
         const val PREF_IGNORE_BATTERY_OPTIMIZATION = "pref_ignore_battery_optimization"
     }
@@ -60,15 +61,36 @@ class SettingsFragment : ResourceSettingsFragment() {
             findNavController().navigate(requireContext(), R.id.openGcmSettings)
             true
         }
-        
-        
-        
+        findPreference<Preference>(PREF_PRIVACY)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            findNavController().navigate(requireContext(), R.id.privacyFragment)
+            true
+        }
+        findPreference<Preference>(PREF_ABOUT)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            findNavController().navigate(requireContext(), R.id.openAbout)
+            true
+        }
+        findPreference<SwitchPreferenceCompat>(PREF_HIDE_LAUNCHER_ICON)?.apply {
+            setOnPreferenceChangeListener { _, newValue ->
+                val isEnabled = newValue as Boolean
+                iconActivityVisibility(MainSettingsActivity::class.java, !isEnabled)
+                true
+            }
+        }
+        findPreference<Preference>(PREF_DEVELOPER)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            openLink(getString(R.string.developer_link))
+            true
+        }
         findPreference<Preference>(PREF_GITHUB)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             openLink(getString(R.string.github_link))
             true
         }
 
-        
+        findPreference<Preference>(PREF_ABOUT)!!.summary =
+            getString(org.microg.tools.ui.R.string.about_version_str, AboutFragment.getSelfVersion(context))
+
+        for (entry in getAllSettingsProviders(requireContext()).flatMap { it.getEntriesStatic(requireContext()) }) {
+            entry.createPreference()
+        }
 
         findPreference<Preference>(PREF_IGNORE_BATTERY_OPTIMIZATION)?.isVisible =
             !isBatteryOptimizationPermissionGranted()
